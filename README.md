@@ -1,11 +1,16 @@
 # chromeos-autofanctrl
 Chromeos fan control script, for chromebooks with fan speed problems.
 # Desciption
-When my Asus Flip CX5 chromebook would get hot, it would spin up its fans. After a while the chromebook would cool down, but the fans would keep spinning at 60% speed, even with the cpu at 40°C. 
-This script resets the fans every 5 seconds, so they will function as intended. 
+When my Asus Flip CX5 chromebook gets hot, it spins up its fans. After a while the chromebook cools down, but the fans keep spinning at 60% speed, even with the cpu at 40°C. 
+This script resets the fan control every 5 seconds, so the fans function as intended. 
+The install script will create a new directory under /usr/local/ and download all the required files. Then it will setup a service that runs on startup and executes the command ```sudo ectool autofanctrl``` every 5 seconds. From my testing this script has absolutely no impact on the system, except making the fans behave correctly.
+# Read before installing
+This script requires the chromebook to be in developer mode. It will also disable boot verfication and remount the system partition as read/write. This is needed to modify the system and add a new service to it. However this **will make the system more insecure**. To be precise this will make the system **as secure as a regular linux installation**(so still pretty secure). Do your own research if you are unsure about this.
 # Installation
-1. Chromebook must be in developer mode *dev mode link*
+1. Chromebook must be in [developer mode](https://www.androidauthority.com/how-to-enable-developer-mode-on-a-chromebook-906688/).
 2. Press ctrl+alt+t to open the terminal, then type ```shell``` and press enter.
 3. Paste ```sudo curl "https://raw.githubusercontent.com/Fornball/chromeos-autofanctrl/main/install.sh" | sudo bash``` into terminal and press enter.
-4. After the chromebook reboots run ```sudo curl "https://raw.githubusercontent.com/Fornball/chromeos-autofanctrl/main/install.sh" | sudo bash -rebooted```
+4. After the chromebook reboots run ```sudo curl "https://raw.githubusercontent.com/Fornball/chromeos-autofanctrl/main/install.sh" | sudo bash -rebooted``` in the terminal.
 After rebooting a second time, the installation is complete.
+# Post-install
+The script needs to be reinstalled after an update(not sure yet if after every update or just twice). Also do not delete the /usr/local/Fanctrl/fanctrl.sh file, as its needed for the service to run correctly.
