@@ -13,4 +13,4 @@ This script requires the chromebook to be in developer mode. It will also disabl
 4. After the chromebook reboots run ```sudo curl "https://raw.githubusercontent.com/Fornball/chromeos-autofanctrl/main/install.sh" | sudo bash -rebooted``` in the terminal.
 After rebooting a second time, the installation is complete.
 # Post-install
-The script needs to be reinstalled after an update(not sure yet if after every update or just twice). Also do not delete the /usr/local/Fanctrl/fanctrl.sh file, as its needed for the service to run correctly.
+The script needs to be reinstalled after an update(not sure yet if after every update or just twice). Also do not delete or move the /usr/local/Fanctrl/fanctrl.sh file, as its needed for the service to run correctly.
