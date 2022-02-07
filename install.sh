@@ -1,9 +1,11 @@
 if [ "$1" = "-rebooted" ]; then
+  {
   echo "Installing part 2/2."
   cp /usr/local/Fanctrl/fanctrl-custom.conf /etc/init/
   initctl reload fanctrl-custom
   echo "Installation is complete."
   exit 1
+  }
 else    
   echo "Installing part 1/2."
   mkdir /usr/local/Fanctrl
