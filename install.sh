@@ -1,7 +1,9 @@
 if [ "$1" = "-rebooted" ]; then
   echo "Installing part 2/2."
   cp /usr/local/Fanctrl/fanctrl-custom.conf /etc/init/
+  initctl reload fanctrl-custom
   echo "Installation is complete."
+  exit 1
 else    
   echo "Installing part 1/2."
   mkdir /usr/local/Fanctrl
@@ -16,9 +18,8 @@ else
   echo "Removing read-write protection"
   partition_id=$(sudo /usr/share/vboot/bin/make_dev_ssd.sh --remove_rootfs_verification | grep -m1 -o "partitions.*")
   /usr/share/vboot/bin/make_dev_ssd.sh --remove_rootfs_verification --$partition_id
+  echo "Chromebook will reboot in 5 seconds."
+  sleep 5
+  reboot
+  exit 1
 fi
-
-echo "Chromebook will reboot in 5 seconds."
-sleep 5
-reboot
-exit 1
