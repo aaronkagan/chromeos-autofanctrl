@@ -12,4 +12,4 @@ This script requires the chromebook to be in developer mode. It will also disabl
 3. Paste ```sudo curl -L "https://is.gd/EZ4jQY" | sudo bash``` into terminal and press enter.
 4. After the chromebook reboots run ```sudo curl -L "https://is.gd/EZ4jQY" | sudo bash -s -- -rebooted``` in the terminal.
 # Post-install
-The script needs to be reinstalled after an update(not sure yet if after every update or just twice). Also do not delete or move the /usr/local/Fanctrl/fanctrl.sh file, as its needed for the service to run correctly.
+The script needs to be reinstalled after every update.
