@@ -4,6 +4,7 @@ if [ "$1" = "-rebooted" ]; then
   echo "Downloading script"
   curl -o /etc/init/fanctrl-custom.conf "https://raw.githubusercontent.com/Fornball/chromeos-autofanctrl/main/fanctrl-custom.conf"
   echo "Starting service"
+  initctl start fanctrl-custom
   initctl reload fanctrl-custom
   echo "Installation is complete."
   exit 1
