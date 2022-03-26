@@ -13,3 +13,5 @@ This script requires the chromebook to be in developer mode. It will also disabl
 4. After the chromebook reboots run ```sudo curl -L "https://is.gd/EZ4jQY" | sudo bash -s -- -rebooted``` in the terminal.
 ## Post-install
 The script needs to be reinstalled after every update.
+## Does it still work?
+- 26.Mar.2022: yes
