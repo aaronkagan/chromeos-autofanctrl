@@ -15,3 +15,6 @@ This script requires the chromebook to be in developer mode. It will also disabl
 The script needs to be reinstalled after every update.
 ## Does it still work?
 - 26.Mar.2022: yes
+- 03.May.2022: yes
+## Todo:
+- [ ] Reinstall automatically after system update
